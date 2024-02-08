@@ -12,11 +12,6 @@ environment{
             steps {
                 sh 'mvn clean deploy'
            }
-        }
-	stage('test'){
-		steps{
-			echo 'hi'
-		}
-	}
+       }
     }
 }
