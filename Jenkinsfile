@@ -11,10 +11,12 @@ environment{
         stage('build') {
             steps {
                 sh 'mvn clean deploy'
-            }
-	    steps {
-	    	echo 'hello'
-	    }
+           }
         }
+	stage('test'){
+		steps{
+			echo 'hi'
+		}
+	}
     }
 }
