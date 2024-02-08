@@ -14,16 +14,5 @@ environment{
            }
        }
 
-        stage('SonarQube analysis') {
-
-		environment{
-                 scannerHome = tool 'tweettrend-sonar-scanner'
-		}
-		steps{
-                	withSonarQubeEnv('tweettrend-sonarqube-server') {
-                	sh "${scannerHome}/bin/sonar-scanner"
-        		}
-		}
-  	}
     }
 }
