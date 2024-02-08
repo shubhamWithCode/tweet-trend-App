@@ -12,6 +12,9 @@ environment{
             steps {
                 sh 'mvn clean deploy'
             }
+	    steps {
+	    	echo 'hello'
+	    }
         }
     }
 }
