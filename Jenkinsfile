@@ -20,7 +20,7 @@ environment{
                  scannerHome = tool 'tweettrend-sonar-scanner'
 		}
 		steps{
-                	withSonarQubeEnv('sonarqube-server') {
+                	withSonarQubeEnv('tweettrend-sonarqube-server') {
                 	sh "${scannerHome}/bin/sonar-scanner"
         		}
 		}
