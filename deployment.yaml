@@ -17,7 +17,7 @@ spec:
       - name: jfrog-artifact-cred
       containers:
       - name:  valaxy-rtp
-        image: shubhamgaikwad.jfrog.io/shubham-docker-local/tweettrend:2.1.2
+        image: shubhamgaikwad.jfrog.io/shubham-docker-local/tweettrend:2.1.3
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
