@@ -1,6 +1,6 @@
 def registry = 'https://shubhamgaikwad.jfrog.io'
 def imageName = 'shubhamgaikwad.jfrog.io/shubham-docker-local/tweettrend'
-def version   = '2.1.2'
+def version   = '2.1.3'
 
 pipeline {
     agent {
