@@ -1,4 +1,6 @@
 def registry = 'https://shubhamgaikwad.jfrog.io'
+def imageName = 'shubhamgaikwad.jfrog.io/shubham-docker-local/tweettrend'
+def version   = '2.1.2'
 
 pipeline {
     agent {
@@ -38,6 +40,28 @@ environment{
                      server.publishBuildInfo(buildInfo)
                      echo '<--------------- Jar Publish Ended --------------->'
 
+            }
+        }
+    }
+
+    stage(" Docker Build ") {
+      steps {
+        script {
+           echo '<--------------- Docker Build Started --------------->'
+           app = docker.build(imageName+":"+version)
+           echo '<--------------- Docker Build Ends --------------->'
+        }
+      }
+    }
+
+            stage (" Docker Publish "){
+        steps {
+            script {
+               echo '<--------------- Docker Publish Started --------------->'
+                docker.withRegistry(registry, 'jfrog-artifact-cred'){
+                    app.push()
+                }
+               echo '<--------------- Docker Publish Ended --------------->'
             }
         }
     }
